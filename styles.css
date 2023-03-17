@@ -1,0 +1,164 @@
+body, html {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0b1522;
+}
+
+.heart {
+  height: 70px;
+  width: 70px;
+  background: #f20044;
+  transform: rotate(-45deg);
+  box-shadow: -10px 10px 90px #f20044;
+  animation: heart 0.6s linear infinite;
+}
+
+@keyframes heart{
+  0%{
+    transform: rotate(-45deg) scale(1.07);
+  } 
+  80%{
+    transform: rotate(-45deg) scale(1.00);
+  } 
+
+}
+
+.heart:before{
+  content: ' ';
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  background: #f20044;
+  top: -50%;
+  border-radius: 50px;
+  box-shadow: 10px -10px 90px #f20044;
+}
+
+.heart:after{
+  content: ' ';
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  background: #f20044;
+  right: -50%;
+  border-radius: 50px;
+  box-shadow: 10px 10px 90px #f20044;
+}
+
+div.wrapper {
+  font-family: 'Proxima Nova';
+  width: 900px;
+}
+
+div.clearfix {
+  float: none;
+  clear: both;
+  font-family: 'Dancing Script';
+  font-size: 1.25em;
+  color: white;
+}
+
+div.back,
+div.forward,
+div.letter-wrapper {
+  float: left;
+}
+
+div.back,
+div.forward {
+  width: 15%;
+}
+
+div.back p,
+div.forward p {
+  top: 30%;
+  position: relative;
+  margin: 0;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+div.back p span,
+div.forward p span {
+  position: relative;
+  border-radius: 1em;
+  padding: .5em 1em;
+  margin-left: .5em;
+  margin-right: .5em;
+}
+
+
+div.back p:hover span,
+div.forward p:hover span {
+  background-color: rgb(214, 183, 232);
+}
+
+div.forward {
+  text-align: left;
+}
+
+div.back {
+  text-align: right;
+}
+
+div.letter-wrapper {
+  max-width: 630px;
+  width: 630px;
+  /*padding: 1em;*/
+}
+
+.cursive {
+  font-family: 'Dancing Script';
+  font-size: 1.25em;
+}
+
+.letter {
+  display: none;
+  max-width: 100%;
+  border-radius: 1em;
+  position: relative;
+  padding: 1em 2em;
+  overflow: hidden;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.letter:nth-of-type(odd) {
+  background-color: rgba(232, 133, 135, .5);
+}
+
+.letter:nth-of-type(even) {
+  background-color: rgba(214, 183, 232, .5);
+}
+
+.letter.active {
+  display: block;
+}
+
+.letter div {
+  width: 100%;
+}
+
+.letter .body,
+.letter .writer,
+.letter .cursive {
+  z-index: 5;
+}
+
+.body {
+  font-size: 1em;
+}
+
+.writer {
+  white-space: pre;
+  margin-top: .5em;
+  font-family: 'Dancing Script'
+}
+
+.writer:before {
+  content: "Love always,\A";
+}
